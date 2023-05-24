@@ -22,10 +22,7 @@ app.get('/', function (req, res) {
 app.get('/api/whoami', (req, res) => {
   res.json({
     ipaddress: req.ip,
-    languge: req.headers['accept-language'].slice(
-      0,
-      req.headers['accept-language'].indexOf('a') - 1
-    ),
+    language: req.headers['accept-language'],
     software: req.headers['user-agent'],
   })
 })
